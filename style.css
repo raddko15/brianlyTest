@@ -125,10 +125,13 @@ header {
 }
 	.intro__button-cont{
 padding-top:20px;
-}
+}.intro__image {
+		height:62vh;
+	}
 	.scores__image {
 		float:left;
-	height:90%;
+	height:75%;
+		padding-top:50px;
 		
 	}
 	.scores__user-info {
@@ -138,8 +141,6 @@ padding-top:20px;
 	.scores__last-btn {
 		margin-top:200px;
 	}
-	.intro__image {
-		height:62vh;
-	}
+	
 	
 }
