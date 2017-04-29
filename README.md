@@ -1,2 +1,0 @@
-# brianlyTest
-Quiz - javascript
