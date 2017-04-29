@@ -93,6 +93,7 @@ header {
 }
 
 .scores__user-info {
+
 	height:20%;
 	display: flex;
 	justify-content: center;
@@ -130,7 +131,7 @@ padding-top:20px;
 	}
 	.scores__image {
 		float:left;
-	height:75%;
+	height:82%;
 		padding-top:50px;
 		
 	}
@@ -138,9 +139,11 @@ padding-top:20px;
 		font-size:24px;
 	 margin-top:200px;}
 	
+/*
 	.scores__last-btn {
 		margin-top:200px;
 	}
+*/
 	
 	
 }
