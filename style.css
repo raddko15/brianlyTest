@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color:	#d8f8e5;
+}
+header {
+ width:100%;
+	margin: 0 auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	background-color: #7ed7ac;
+}
+.content {
+	width:90%;
+	margin: 0 auto;
+	padding-top:30px;
+}
+.intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+.intro__image {
+	height:50vh;
+	width:auto;
+	display: flex;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top:10px;
+	padding-top: 10px;
+}
+.intro__description{
+	padding-top: 30px;
+}
+.intro__button-cont {
+	margin-top:5px;
+	height:100px;
+}
+.intro__button {
+	margin-top: 20px;
+	color:black;
+ width:200px;
+}
+.questions{
+	position:relative;
+	height:100%;
+	display:none;
+}
+.questions__timer {
+	float:right;
+}
+.questions__actual-question {
+	padding-top:40px;
+}
+.questions__answers {
+	padding-top:40px;
+}
+.questions__radio-btn {
+	padding-bottom:5px;
+}
+.questions__buttons {
+	width:100%;
+	padding-top:30px;
+	padding-bottom:50px;
+	display: flex;
+	justify-content: center;
+}
+.buttons__logic {
+	color:black;
+	width:180px;
+}
+.scores {
+	display:none;
+	width:95%;
+	height:75%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.scores__image-box {
+	padding-top:20px;
+}
+.scores__image {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+ height:60%;
+ width:auto;
+}
+
+.scores__user-info {
+	height:20%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	padding:5px;
+}
+.scores__last-btn {
+	padding-top:20px;
+	width:180px;
+	margin-left:auto;
+	margin-right:auto;
+	color:black;
+}
+
+@media screen and (min-device-height:768px){
+	.introduction__invitation{
+	padding-top:70px;
+	}  
+}
+@media screen and (min-device-width:1300px) {
+	.intro {
+		margin-top:20px;
+	}
+	.intro__button {
+		width:30vw;
+}
+	.intro__button-cont{
+padding-top:20px;
+}
+	.scores__image {
+		float:left;
+	height:90%;
+		
+	}
+	.scores__user-info {
+		font-size:24px;
+	 margin-top:200px;}
+	
+	.scores__last-btn {
+		margin-top:200px;
+	}
+	
+}

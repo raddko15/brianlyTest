@@ -1,0 +1,107 @@
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Super Quizowanie</title>
+  <meta name="description" content="Quiz - Brainly">
+  <meta name="author" content="Radek Furmanski">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://styleguide.brainly.com/77.2.0/style-guide.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body onload ="loadJSON()">
+
+<header>
+	<h1 class="sg-header-primary sg-header-primary--xsmall">Specjalny Quiz z wiedzy ogólnej</h1>
+</header>
+
+<div class="content">
+	<div id="introduction" class="intro">
+			<p>Jesteś gotowy/a na świetną zabawę?</p>
+			<img class="intro__image" src="images/scientist.png" alt="scientist with a key" />
+			<h2 class="intro__description sg-header-secondary">Nasi naukowcy opracowali bazę unikalnych pytań, które pozwolą Ci sprawdzić Twój stan wiedzy w parę minut!</h2>
+		 <div class="intro__button-cont">
+			 <button class="intro__button sg-button-primary" type = "button" onclick = "displayQuiz()">Zaczynamy </button>
+		 </div>
+	</div>
+	
+	
+	<div id="questions" class="questions">
+ <h1 id="timer" class="questions__timer sg-header-primary sg-header-primary--small">
+        Together we go far!</h1>
+		<p id="Id" class="sg-header-primary sg-header-primary--small">Id</p>
+		<p id="Question" class="questions__actual-question sg-text sg-text--standout">Question</p>
+		
+	<div class="questions__answers">
+		<div class="sg-label sg-label--secondary questions__radio-btn">
+            <div class="sg-label__icon">
+                <div class="answer sg-radio">
+                    <input name="q1" class="answers sg-radio__element" type="radio" id="value0" checked="false">
+                    <label class="sg-radio__ghost" for="radio-3"></label>
+                </div>
+            </div>
+            <label class="sg-label__text" for="radio-3"><span id="Answer0" class="sg-text sg-text--gray">A1</span></label>
+            
+  </div>
+  <div class="sg-label sg-label--secondary questions__radio-btn">
+            <div class="sg-label__icon">
+                <div class="answer sg-radio">
+                    <input name="q1" class="answers sg-radio__element" type="radio" id="value1">
+                    <label class="sg-radio__ghost" for="radio-3"></label>
+                </div>
+            </div>
+            <label class="sg-label__text" for="radio-3"><span id="Answer1" class="sg-text sg-text--gray">A1</span></label>          
+  </div>
+  <div class="sg-label sg-label--secondary questions__radio-btn">
+            <div class="sg-label__icon">
+                <div class="answer sg-radio">
+                    <input name="q1" class="answers sg-radio__element" type="radio" id="value2">
+                    <label class="sg-radio__ghost" for="radio-3"></label>
+                </div>
+            </div>
+            <label class="sg-label__text" for="radio-3"><span id="Answer2" class="sg-text sg-text--gray">A1</span></label>        
+  </div>
+  <div class="sg-label sg-label--secondary questions__radio-btn">
+            <div class="sg-label__icon">
+                <div class="answer sg-radio">
+                    <input name="q1" class="answers sg-radio__element" type="radio" id="value3">
+                    <label class="sg-radio__ghost" for="radio-3"></label>
+                </div>
+            </div>
+            <label class="sg-label__text" for="radio-3"><span id="Answer3" class="sg-text sg-text--gray">A1</span></label>
+  </div>
+ </div>
+  <div class="questions__buttons">
+				<div>
+										<button id="prev" class="buttons__logic sg-button-primary" type = "button" onclick = "prev()">Poprzednie </button>
+				</div>
+				<div>
+										<button id="next" class="buttons__logic sg-button-primary"type="button" onclick = "next();loadJSON()">Następne </button>
+				</div>
+				<div>
+										<button id="finish"class="buttons__logic sg-button-primary" type="button" onclick = "correctAnswers()"> Zakończ </button>
+				</div>
+ </div>   
+</div> 
+ 
+	<div id="scoresContainer" class="scores">
+		<div class="scores__image-box">
+			<img src="images/brain.png" id="userImage"class="scores__image" />
+					<div class="scores__user-info">
+							<p id="congratulation">Gratulacje! Quiz ukończony!</p>
+							<p id="scoreUser"></p>
+							<p id="userDescription"></p>
+     </div>     
+		</div>
+  <div class="scores__last-btn">
+		 <button id="tryAgain" class="intro__button sg-button-primary" type="button" onclick = "displayQuiz()">Powtórz</button>
+		</div>
+	</div>
+	
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+
+
