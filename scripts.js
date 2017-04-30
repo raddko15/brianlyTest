@@ -9,6 +9,7 @@ function timer() {
 	 var min = Math.floor(count / 60);
 	 var second = Math.floor(count % 60);
 	 var timerDisplay = document.getElementById('timer');
+	 timerDisplay.style.color = "black";
   count = count-1;
   if (count === -2) {
 			correctAnswers();
