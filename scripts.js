@@ -1,9 +1,14 @@
 var questionNumber = 0;
-var points = 0;
-var userAnswers= [];
-var json;
-var count;
-var counter;
+var points = 0; // user's points
+var userAnswers= []; // array for user's answers
+var json; // json, info quiz
+var count; // time in seconds
+var counter; // interval for timer
+ document.addEventListener("DOMContentLoaded", function()
+ {
+     loadJSON();
+		
+ }, false);
 
 function timer() {
 	 var min = Math.floor(count / 60);
@@ -12,9 +17,7 @@ function timer() {
   if (count === -2) {
 			correctAnswers();
 			document.getElementById('introduction').style.display = 'none';
-//			if(document.getElementById('scoresContainer').style.display == 'none')
-//			document.getElementById('congratulation').innerHTML = "Niestety skończył Ci się czas";
-    }
+  }
 	 if(min<10)
 			min = "0" + min;
 	 if(second<10)
@@ -24,16 +27,16 @@ function timer() {
 function displayQuiz(){
 	counter = setInterval(timer, 1000);
 	count = json.time_seconds;
+//	count = 10;
 	timer();
 	points = 0;
 	questionNumber = 0;
 	userAnswers = [];
-	loadJSON();
+	quizLogic();
 	document.getElementById('introduction').style.display = 'none';
 	document.getElementById('scoresContainer').style.display = 'none';
 	document.getElementById('questions').style.display = 'block';
 }
-
 function loadJSON(){
 		var data_file = "https://cdn.rawgit.com/kdzwinel/cd08d08002995675f10d065985257416/raw/f681999d414a85f081c52424605151cc8f93313d/quiz-data.json";
 		var http_request = new XMLHttpRequest();
@@ -54,63 +57,60 @@ function loadJSON(){
 								}
 					}
 		 }
-
 		http_request.onreadystatechange = function(){
 					if (http_request.readyState == 4  ){
 								// Javascript function JSON.parse to parse JSON data
 								var jsonObj = JSON.parse(http_request.responseText);
         json = jsonObj;
-								// jsonObj variable now contains the data structure and can
-								// be accessed as jsonObj.name and jsonObj.country.
-								document.getElementById("Id").innerHTML = "Pytanie nr: " + jsonObj.questions[questionNumber].id;
-								document.getElementById("Question").innerHTML = jsonObj.questions[questionNumber].question;
-								document.getElementById("Answer0").innerHTML = jsonObj.questions[questionNumber].answers[0].answer;
-								document.getElementById("Answer1").innerHTML = jsonObj.questions[questionNumber].answers[1].answer;
-								document.getElementById("Answer2").innerHTML = jsonObj.questions[questionNumber].answers[2].answer;
-								document.getElementById("Answer3").innerHTML = jsonObj.questions[questionNumber].answers[3].answer;
-				     
-								var answers_list = document.getElementsByClassName('answers');
-
-								switch(userAnswers[questionNumber]) {
-									case 0:
-														answers_list[0].checked = true;
-														break;
-									case 1: 
-														answers_list[1].checked = true;
-														break;
-									case 2:
-														answers_list[2].checked = true;
-														break;
-									case 3:
-														answers_list[3].checked = true;
-														break;
-									default: for (var i = 0; i < answers_list.length; i++) { answers_list[i].checked = false; }
-								}		
-								if(questionNumber==jsonObj.questions.length-1) {
-									document.getElementById("next").style.display = 'none';
-									document.getElementById("finish").style.display = 'block';
-								}
-								else {
-									document.getElementById("next").style.display = 'block';
-									document.getElementById("finish").style.display = 'none';
-								}
-								if	(questionNumber==0)
-									document.getElementById("prev").style.display = 'none';
-								} else 
-									document.getElementById("prev").style.display = 'block';
+								// jsonObj variable now contains the data structure
+		   }
 		}
-
 		http_request.open("GET", data_file, true);
 		http_request.send();
 }
+function quizLogic() {
+	document.getElementById("Id").innerHTML = "Pytanie nr: " + json.questions[questionNumber].id;
+	document.getElementById("Question").innerHTML = json.questions[questionNumber].question;
+	document.getElementById("Answer0").innerHTML = json.questions[questionNumber].answers[0].answer;
+	document.getElementById("Answer1").innerHTML = json.questions[questionNumber].answers[1].answer;
+	document.getElementById("Answer2").innerHTML = json.questions[questionNumber].answers[2].answer;
+	document.getElementById("Answer3").innerHTML = json.questions[questionNumber].answers[3].answer;
 
+var answers_list = document.getElementsByClassName('answers');
+
+	switch(userAnswers[questionNumber]) {
+		case 0:
+							answers_list[0].checked = true;
+							break;
+		case 1: 
+							answers_list[1].checked = true;
+							break;
+		case 2:
+							answers_list[2].checked = true;
+							break;
+		case 3:
+							answers_list[3].checked = true;
+							break;
+		default: for (var i = 0; i < answers_list.length; i++) { answers_list[i].checked = false; }
+	}
+	if(questionNumber==json.questions.length-1) {
+				document.getElementById("next").style.display = 'none';
+				document.getElementById("finish").style.display = 'block';
+			}
+			else {
+				document.getElementById("next").style.display = 'block';
+				document.getElementById("finish").style.display = 'none';
+			}
+			if	(questionNumber==0)
+				document.getElementById("prev").style.display = 'none';
+				else 
+				document.getElementById("prev").style.display = 'block';
+}
 function next() {
-	
 	 var answer0 = document.getElementById("value0").checked;
 	 var answer1 = document.getElementById("value1").checked;
 	 var answer2= document.getElementById("value2").checked;
 	 var answer3 = document.getElementById("value3").checked;
-
 	//if(answer0==true || answer1==true || answer2==true || answer3==true){
 	/*are all answers wanted? */	
 		if(answer0==true)
@@ -132,7 +132,8 @@ function next() {
 function prev() {
 	if(questionNumber!=0) {
 	 questionNumber--;
-	 loadJSON();
+	 //loadJSON();
+		quizLogic();
 	}
 }
 function correctAnswers() {
@@ -154,6 +155,9 @@ function correctAnswers() {
 	//023122302 correct
 	if(count ==-2)
 	 document.getElementById('congratulation').innerHTML = "Niestety skończył Ci się czas";
+	else {
+		document.getElementById('congratulation').innerHTML = "Gratulacje! Quiz ukończony!"
+	}
 	
 	document.getElementById('questions').style.display = 'none';
 	document.getElementById('scoresContainer').style.display = 'block';
@@ -179,3 +183,7 @@ document.getElementById('userImage').src = "images/student.png";}
 
 	clearInterval(counter);
 }
+function finish(){
+		clearInterval(counter);
+		correctAnswers();
+	}
