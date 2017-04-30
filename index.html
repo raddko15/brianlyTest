@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css"> 
 </head>
 
-<body>
+<body onload ="loadJSON()">
 
 <header>
 	<h1 class="sg-header-primary sg-header-primary--xsmall">Specjalny Quiz z wiedzy ogólnej</h1>
@@ -71,17 +71,32 @@
             <label class="sg-label__text" for="radio-3"><span id="Answer3" class="sg-text sg-text--gray">A1</span></label>
   </div>
  </div>
+		
+ 
+ 
+ 
   <div class="questions__buttons">
 				<div>
 										<button id="prev" class="buttons__logic sg-button-primary" type = "button" onclick = "prev()">Poprzednie </button>
 				</div>
 				<div>
-										<button id="next" class="buttons__logic sg-button-primary"type="button" onclick = "next();quizLogic();">Następne </button>
+										<button id="next" class="buttons__logic sg-button-primary"type="button" onclick = "next();quizLogic()">Następne </button>
 				</div>
 				<div>
 										<button id="finish"class="buttons__logic sg-button-primary" type="button" onclick = "correctAnswers()"> Zakończ </button>
 				</div>
  </div>   
+ 
+ <div class="questions__buttons">			
+									
+									<p id="question_number">Quiz naukowy</p> 
+				     
+	</div>
+ 
+ 
+ 
+ 
+ 
 </div> 
  
 	<div id="scoresContainer" class="scores">

@@ -36,6 +36,7 @@ function displayQuiz(){
 	document.getElementById('introduction').style.display = 'none';
 	document.getElementById('scoresContainer').style.display = 'none';
 	document.getElementById('questions').style.display = 'block';
+	displayNumberOfQuestion();
 }
 function loadJSON(){
 		var data_file = "https://cdn.rawgit.com/kdzwinel/cd08d08002995675f10d065985257416/raw/f681999d414a85f081c52424605151cc8f93313d/quiz-data.json";
@@ -126,14 +127,15 @@ function next() {
 			userAnswers[questionNumber]=-1;
 		}
 		questionNumber++;
+	 displayNumberOfQuestion();
 //}
 
 }
 function prev() {
 	if(questionNumber!=0) {
 	 questionNumber--;
-	 //loadJSON();
 		quizLogic();
+		displayNumberOfQuestion();
 	}
 }
 function correctAnswers() {
@@ -187,3 +189,8 @@ function finish(){
 		clearInterval(counter);
 		correctAnswers();
 	}
+function displayNumberOfQuestion(){
+	var questionNumberDisplay = document.getElementById('question_number');
+	questionNumberDisplay.style.fontWeight = "bold";
+	questionNumberDisplay.innerHTML = (questionNumber+1) + "/" +json.questions.length;
+}
