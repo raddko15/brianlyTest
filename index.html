@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css"> 
 </head>
 
-<body onload ="loadJSON()">
+<body>
 
 <header>
 	<h1 class="sg-header-primary sg-header-primary--xsmall">Specjalny Quiz z wiedzy ogólnej</h1>
@@ -17,7 +17,7 @@
 
 <div class="content">
 	<div id="introduction" class="intro">
-			<p>Jesteś gotowy/a na świetną zabawę?</p>
+			<p class="sg-text--emphasised">Jesteś gotowy/a na świetną zabawę?</p>
 			<img class="intro__image" src="images/scientist.png" alt="scientist with a key" />
 			<h2 class="intro__description sg-header-secondary">Nasi naukowcy opracowali bazę unikalnych pytań, które pozwolą Ci sprawdzić Twój stan wiedzy w parę minut!</h2>
 		 <div class="intro__button-cont">
@@ -72,9 +72,6 @@
   </div>
  </div>
 		
- 
- 
- 
   <div class="questions__buttons">
 				<div>
 										<button id="prev" class="buttons__logic sg-button-primary" type = "button" onclick = "prev()">Poprzednie </button>
@@ -88,15 +85,8 @@
  </div>   
  
  <div class="questions__buttons">			
-									
-									<p id="question_number">Quiz naukowy</p> 
-				     
+			<p id="question_number">Quiz naukowy</p> 
 	</div>
- 
- 
- 
- 
- 
 </div> 
  
 	<div id="scoresContainer" class="scores">
@@ -113,8 +103,6 @@
 									</div>     
      </div>
    
-		
-  
 	</div>
 	
 </div>

@@ -2,32 +2,30 @@ var questionNumber = 0;
 var points = 0; // user's points
 var userAnswers= []; // array for user's answers
 var json; // json, info quiz
-var count; // time in seconds
+var count; // time in seconds, used i displayQuiz
 var counter; // interval for timer
- document.addEventListener("DOMContentLoaded", function()
- {
-     loadJSON();
-		
- }, false);
-
+ document.addEventListener("DOMContentLoaded", function(){loadJSON();}, false);
 function timer() {
 	 var min = Math.floor(count / 60);
 	 var second = Math.floor(count % 60);
+	 var timerDisplay = document.getElementById('timer');
   count = count-1;
   if (count === -2) {
 			correctAnswers();
 			document.getElementById('introduction').style.display = 'none';
   }
+	 if( count < 59)
+			timerDisplay.style.color = "red";
 	 if(min<10)
 			min = "0" + min;
 	 if(second<10)
 			second = "0" + second;
-  document.getElementById('timer').innerHTML = min + ":"+second;
+  timerDisplay.innerHTML = min + ":"+second;
 }
 function displayQuiz(){
 	counter = setInterval(timer, 1000);
-	count = json.time_seconds;
-//	count = 10;
+ count = json.time_seconds;
+//	count = 61;
 	timer();
 	points = 0;
 	questionNumber = 0;
