@@ -158,11 +158,11 @@ function correctAnswers() {
 	document.getElementById('questions').style.display = 'none';
 	document.getElementById('scoresContainer').style.display = 'block';
 	if(points === 1)
-	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punkt"; // dolozyc pyrzpadek dla 1 punktu
+	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punkt!"; // dolozyc pyrzpadek dla 1 punktu
 	else if(points <=4 && points != 0)
-	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punkty";
+	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punkty!";
 	else
-	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punktów";
+	 document.getElementById('scoreUser').innerHTML = "Zdobyłeś " + points + " punktów!";
 
 var descriptions = ['Następnym razem na pewno pójdzie Ci lepiej - na teraz otrzymujesz rangę szczur laboratoryjny.', 'Dobry wynik, widać że ciągle zdobywasz wiedzę - otrzymujesz rangę ucznia', 'Świetnie Ci poszło - można powiedzieć, że jesteś brainly'];
 

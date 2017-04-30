@@ -75,31 +75,48 @@ header {
 	width:180px;
 }
 .scores {
+/*	background-color:green;*/
 	display:none;
-	width:95%;
-	height:75%;
+	width:98%;
+	height:90%;
+	min-height: 300px;
+	min-width:300px;
 	margin-left:auto;
 	margin-right:auto;
 }
 .scores__image-box {
+	float:none;
+/*	background-image: url('images/rat.png');*/
+/*	background-color:yellow;*/
+	width:300px;
+ height:260px;
+	min-height:200px;
 	padding-top:20px;
+	margin-left:auto;
+	margin-right:auto;
 }
 .scores__image {
+/* background-color: red;*/
+ width:80%;
+	
+ height:auto;
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
- height:50%;
- width:auto;
 }
 
 .scores__user-info {
-
-	height:20%;
+	float:none;
+	font-size:18px;
+/* background-color:blue;*/
+	height:auto;
+	min-height: 50%;
 	display: flex;
-	justify-content: center;
+/*	justify-content: center;*/
 	text-align: center;
 	flex-direction: column;
 	padding:5px;
+/*	padding-top: 10px;*/
 }
 .scores__last-btn {
 	padding-top:20px;
@@ -111,13 +128,32 @@ header {
 .scores__last-btn-look {
 	color:black;
 }
-
+@media screen and (min-device-height:400px){
+	
+/*	.scores__user-info{	padding-top: 40px;}*/
+}
 @media screen and (min-device-height:768px){
 	.introduction__invitation{
 	padding-top:70px;
 	}  
 }
-@media screen and (min-device-width:1300px) {
+@media screen and (min-width:1000px) {	
+	
+	.scores__image-box {
+		height:100%;
+		width:50%;
+		float:left;
+	}
+	.scores__image {
+			padding-top:50px;
+	}
+	.scores__user-info {
+		float:left;
+		width:50%;
+		height:100%;
+			justify-content: center;
+	}
+@media screen and (min-width:1300px) {
 	.intro {
 		margin-top:20px;
 	}
@@ -130,15 +166,33 @@ padding-top:20px;
 		height:62vh;
 	}
 	.scores__image {
-		float:left;
-	height:82%;
+		
+/*
+	 height:82%;
+		width:auto;
+*/
 		padding-top:50px;
 		
 	}
-	.scores__user-info {
-		font-size:24px;
-	 margin-top:200px;}
+	.scores__image-box {
 	
+		height:100%;
+		width:50%;
+		float:left;
+	}
+	.scores__user-info {
+		float:left;
+		width:50%;
+		height:100%;
+			justify-content: center;
+		
+		
+	}
+/*		font-size:24px;*/
+/*
+		margin-top:200px; 
+	
+*/
 /*
 	.scores__last-btn {
 		margin-top:200px;
@@ -146,4 +200,4 @@ padding-top:20px;
 */
 	
 	
-}
+	}
