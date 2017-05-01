@@ -171,16 +171,23 @@ function correctAnswers() {
 
 var descriptions = ['Następnym razem na pewno pójdzie Ci lepiej - na teraz otrzymujesz rangę szczur laboratoryjny.', 'Dobry wynik, widać że ciągle zdobywasz wiedzę - otrzymujesz rangę ucznia', 'Świetnie Ci poszło - można powiedzieć, że jesteś brainly'];
 
+var userImage = document.getElementsByClassName('scores__image');
 if(points < amountOfQuestions/3){document.getElementById('userDescription').innerHTML=descriptions[0];
-														 document.getElementById('userImage').src = "images/rat.png";
+														userImage[0].style.display = "block";
+														userImage[1].style.display = "none";
+														userImage[2].style.display = "none";
 														}
 	              
 else if (points >= amountOfQuestions/3 && points <= (amountOfQuestions/3)*2) 
 {document.getElementById('userDescription').innerHTML=descriptions[1]
-document.getElementById('userImage').src = "images/student.png";}
+              userImage[0].style.display = "none";
+														userImage[1].style.display = "block";
+														userImage[2].style.display = "none";}
 	
 	else{document.getElementById('userDescription').innerHTML=descriptions[2]
-					document.getElementById('userImage').src = "images/brain.png";}
+					         userImage[0].style.display = "none";
+														userImage[1].style.display = "none";
+														userImage[2].style.display = "block";}
 
 	clearInterval(counter);
 }
