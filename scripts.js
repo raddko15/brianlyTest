@@ -4,7 +4,7 @@ var userAnswers= []; // array for user's answers
 var json; // json, info quiz
 var count; // time in seconds, used i displayQuiz
 var counter; // interval for timer
- document.addEventListener("DOMContentLoaded", function(){loadJSON();}, false);
+document.addEventListener("DOMContentLoaded", function(){loadJSON();}, false);
 function timer() {
 	 var min = Math.floor(count / 60);
 	 var second = Math.floor(count % 60);
@@ -105,7 +105,7 @@ var answers_list = document.getElementsByClassName('answers');
 				document.getElementById("prev").style.display = 'none';
 				else 
 				document.getElementById("prev").style.display = 'block';
-}
+} 
 function next() {
 	 var answer0 = document.getElementById("value0").checked;
 	 var answer1 = document.getElementById("value1").checked;
@@ -129,14 +129,14 @@ function next() {
 	 displayNumberOfQuestion();
 //}
 
-}
+} 
 function prev() {
 	if(questionNumber!=0) {
 	 questionNumber--;
 		quizLogic();
 		displayNumberOfQuestion();
 	}
-}
+} 
 function correctAnswers() {
 	next();
 	var correctAnswers=[];
@@ -190,11 +190,11 @@ else if (points >= amountOfQuestions/3 && points <= (amountOfQuestions/3)*2)
 														userImage[2].style.display = "block";}
 
 	clearInterval(counter);
-}
+} 
 function finish(){
 		clearInterval(counter);
 		correctAnswers();
-	}
+	} 
 function displayNumberOfQuestion(){
 	var questionNumberDisplay = document.getElementById('question_number');
 	questionNumberDisplay.style.fontWeight = "bold";

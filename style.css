@@ -91,7 +91,6 @@ header {
 	display:none;
  width:80%;
  height:auto;
-/*	display:block;*/
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -133,13 +132,13 @@ header {
 		float:left;
 	}
 	.scores__image {
-			padding-top:50px;
+		padding-top:50px;
 	}
 	.scores__user-info {
 		float:left;
 		width:50%;
 		height:100%;
-			justify-content:center;
+		justify-content:center;
 	}
 	.scores_last-btn {
 			padding-top:20px;
@@ -152,10 +151,10 @@ header {
 			width:30vw;
 	}
 		.intro__button-cont{
-	padding-top:20px;
+	  padding-top:20px;
 	}.intro__image {
 			height:64vh;
-		width:auto;
+	 	width:auto;
 		}
 		.scores__image {
 			padding-top:50px;
