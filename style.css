@@ -19,15 +19,12 @@ header {
 	padding-top:20px;
 }
 .intro {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	text-align: center;
 }
 .intro__image {
 	height:55vh;
 	width:auto;
-	display: flex;
+	display:block;
 	margin-left:auto;
 	margin-right: auto;
 	margin-top:10px;
@@ -129,6 +126,7 @@ header {
 	}  
 }
 @media screen and (min-width:1000px) {	
+	
 	.scores__image-box {
 		height:100%;
 		width:50%;
@@ -156,7 +154,8 @@ header {
 		.intro__button-cont{
 	padding-top:20px;
 	}.intro__image {
-			height:62vh;
+			height:64vh;
+		width:auto;
 		}
 		.scores__image {
 			padding-top:50px;
