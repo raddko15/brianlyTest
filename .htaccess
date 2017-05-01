@@ -1,13 +1,11 @@
-### PROTECT FILES ###
-<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
-Order Allow,Deny
-Deny from all
-</FilesMatch>
-
- <IfModule mod_expires.c>
 ExpiresActive On
-ExpiresByType image/png "access plus 30 days"
-ExpiresByType text/css "access plus 30 days"
-ExpiresByType text/javascript "access plus 30 days"
-ExpiresByType application/javascript "access plus 30 days"
-</IfModule>
+ExpiresByType image/jpg "access plus 1 month"
+ExpiresByType image/jpeg "access plus 1 month"
+ExpiresByType image/gif "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/pdf "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/x-icon "access plus 1 month"
+ExpiresDefault "access plus 2 days"
