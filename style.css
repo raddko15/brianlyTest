@@ -14,7 +14,6 @@ header {
 	background-color: #7ed7ac;
 }
 .content {
-	
 	width:90%;
 	margin: 0 auto;
 	padding-top:20px;
@@ -26,7 +25,7 @@ header {
 	text-align: center;
 }
 .intro__image {
-	height:50vh;
+	height:55vh;
 	width:auto;
 	display: flex;
 	margin-left:auto;
